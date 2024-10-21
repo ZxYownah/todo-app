@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
+import streamlit as st
+import functions
 
-print(
-    """\
-Content-Type: text/html
+todos=functions.get_todos()
 
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<h1>Hello, World!</h1>
-</body>
-</html>"""
-)
+st.title("My Todo App")
+st.subheader("This is my todo app")
+st.write("This app is to increase your productivity")
 
-Print('MoMo')
+for todo in todos:
+    st.checkbox(todo)
+
+st.text_input(label="", placeholder="Add new todo ...")
+
+print("Hello")
